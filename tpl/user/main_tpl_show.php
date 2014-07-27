@@ -3,28 +3,28 @@
         <div class="col-lg-3 col-md-4 col-sm-6">
             <div class="panel-group">
                 <div class="panel panel-default">
-                    <?php foreach($g_config['user_mongo_model']['cabinet_menu'] as $p):?>
-                        <div class="panel-heading">
-                            <strong class="panel-title">
-                                <?php if (SiteRoot(GetQuery()) == $p['href']):?>
+                    <ul class="list-group">
+                        <?php foreach($g_config['user_mongo_model']['cabinet_menu'] as $p):?>
+                            <?php if (SiteRoot(GetQuery()) == $p['href']):?>
+                                <li class="list-group-item">
                                     <a href="<?= $p['href']?>">
                                         <strong><?= $p['title']?></strong>
                                     </a>
-                                <?php else:?>
+                                </li>
+                            <?php else:?>
+                                <li class="list-group-item">
                                     <a href="<?= $p['href']?>">
                                         <?= $p['title']?>
                                     </a>
-                                <?php endif?>
-                            </strong>
-                        </div>
-                    <?php endforeach?>
-                    <div class="panel-heading">
-                        <strong class="panel-title">
+                                </li>
+                            <?php endif?>
+                        <?php endforeach?>
+                        <li class="list-group-item">
                             <a href="<?= SiteRoot('user/logout')?>" onclick="return confirm('Вы действительно хотите выйти?')">
                                 Выйти
                             </a>
-                        </strong>
-                    </div>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
