@@ -82,7 +82,6 @@
             $user->birthday = $birthday;
 
             $user->about   = trim(Post("about"));
-            $user->hobbies = trim(Post("hobbies"));
 
             if (Post("photo_remove") == "on")
             {
